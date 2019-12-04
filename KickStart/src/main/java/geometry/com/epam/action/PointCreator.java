@@ -12,7 +12,8 @@ public class PointCreator {
     private static final Logger log = LogManager.getLogger(PointCreator.class);
 
     public Point createPoint(String x, String y) throws NotPointException {
-        if (PointValidator.isPoint(x, y)) {
+        PointValidator validator=PointValidator.getInstance();
+        if (validator.isPoint(x, y)) {
             log.info("Point has been created");
             double xValue = Double.parseDouble(x);
             double yValue = Double.parseDouble(y);

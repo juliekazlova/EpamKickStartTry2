@@ -4,6 +4,16 @@ package geometry.com.epam.validator;
 import geometry.com.epam.entity.Point;
 
 public class TriangleValidator {
+    private static final TriangleValidator instance=new TriangleValidator();
+
+
+    private TriangleValidator() {
+    }
+
+    public static TriangleValidator getInstance(){
+        return instance;
+    }
+
     public boolean isTriangle(Point first, Point second, Point third) {
         if (first != null && second != null && third != null) {
 

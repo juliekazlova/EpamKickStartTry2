@@ -6,6 +6,14 @@ import geometry.com.epam.entity.Triangle;
 
 
 public class TriangleLogic {
+
+    private static final TriangleLogic instance=new TriangleLogic();
+
+    private TriangleLogic(){}
+
+    public static TriangleLogic getInstance(){
+        return instance;
+    }
     public double calculatePerimeter(Triangle triangle) {
         Point first = triangle.getFirst();
         Point second = triangle.getSecond();
@@ -13,7 +21,6 @@ public class TriangleLogic {
         return calculateDistanceBetweenPoints(first, second) + calculateDistanceBetweenPoints(first, third) +
                 calculateDistanceBetweenPoints(second, third);
     }
-
 
     private double calculateDistanceBetweenPoints(Point first, Point second) {
         double deltaX = first.getX() - second.getX();

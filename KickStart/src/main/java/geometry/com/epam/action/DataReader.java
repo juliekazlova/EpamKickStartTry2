@@ -6,6 +6,14 @@ import java.util.*;
 
 public class DataReader {
 
+    private final static DataReader instance=new DataReader();
+
+    private DataReader(){}
+
+    public static DataReader getInstance(){
+        return instance;
+    }
+
     public List<String> getData(String path) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(path)).useDelimiter(";").useLocale(Locale.US);
         try {

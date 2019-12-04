@@ -15,7 +15,7 @@ public class TriangleCreator {
     private static final Logger log = LogManager.getLogger(PointCreator.class);
 
     public Triangle createTriangle(Point first, Point second, Point third) throws NotTriangleException {
-        TriangleValidator validator = new TriangleValidator();
+        TriangleValidator validator = TriangleValidator.getInstance();
 
         boolean valid = validator.isTriangle(first, second, third);
         if (valid) {
@@ -30,7 +30,7 @@ public class TriangleCreator {
         Point first = pointCreator.createPoint(x1, y1);
         Point second = pointCreator.createPoint(x2, y2);
         Point third = pointCreator.createPoint(x3, y3);
-        TriangleValidator validator = new TriangleValidator();
+        TriangleValidator validator = TriangleValidator.getInstance();
 
         boolean valid = validator.isTriangle(first, second, third);
         if (valid) {
@@ -45,7 +45,7 @@ public class TriangleCreator {
         Point first = pointCreator.createPoint(coordinates.get(0), coordinates.get(1));
         Point second = pointCreator.createPoint(coordinates.get(2), coordinates.get(3));
         Point third = pointCreator.createPoint(coordinates.get(4), coordinates.get(5));
-        TriangleValidator validator = new TriangleValidator();
+        TriangleValidator validator = TriangleValidator.getInstance();
 
         boolean valid = validator.isTriangle(first, second, third);
         if (valid) {
@@ -58,7 +58,7 @@ public class TriangleCreator {
     public List<Triangle> createTrianglesFromFile(String path) throws IOException {
         List<Triangle> list = new ArrayList<Triangle>();
         final int VALID_SIZE = 6;
-        DataReader dataReader = new DataReader();
+        DataReader dataReader = DataReader.getInstance();
         List<String> dataFromFile;
         List<String> coordinates;
         dataFromFile = dataReader.getData(path);

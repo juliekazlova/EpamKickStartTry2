@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TriangleValidatorTest {
-    private static final TriangleValidator triangleValidator = new TriangleValidator();
+    private static final TriangleValidator triangleValidator = TriangleValidator.getInstance();
 
     @Test
     public void shouldReturnFalse() {

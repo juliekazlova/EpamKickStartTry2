@@ -23,7 +23,7 @@ import java.util.List;
 public class TriangleLogicTest {
 
     private static List<Triangle> list;
-    private final static TriangleLogic triangleLogic = new TriangleLogic();
+    private final static TriangleLogic triangleLogic = TriangleLogic.getInstance();
     private final static double EPSILON = 0.000001;
 
     @BeforeClass
